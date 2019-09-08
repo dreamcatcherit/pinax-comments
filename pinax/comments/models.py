@@ -10,7 +10,7 @@ from django.utils.encoding import python_2_unicode_compatible
 @python_2_unicode_compatible
 class Comment(models.Model):
 
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, related_name="comments", on_delete=models.CASCADE)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, related_name="comments", on_delete=models.SET_NULL)
 
     name = models.CharField(max_length=100)
     email = models.CharField(max_length=255, blank=True)
